@@ -1,0 +1,8 @@
+{
+ "lam": 0.01,
+ "cv_mean_deg": 3.770764585647445,
+ "val_ridge_deg": 3.1040086891760774,
+ "val_gray_world_deg": 5.319445518077246,
+ "val_shades_of_gray_deg": 3.8520113155752256,
+ "val_gray_edge_deg": 3.6920867178581176
+}

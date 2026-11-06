@@ -1,0 +1,12 @@
+{
+ "strength=1 chroma=True": 34.58999478751437,
+ "strength=1 chroma=False": 33.077390846401485,
+ "strength=2 chroma=True": 33.98113032382851,
+ "strength=2 chroma=False": 32.88180467886424,
+ "strength=3 chroma=True": 33.77994472083741,
+ "strength=3 chroma=False": 32.73799600154671,
+ "strength=4 chroma=True": 33.700581658200875,
+ "strength=4 chroma=False": 32.67528023217598,
+ "strength=6 chroma=True": 33.64083608088693,
+ "strength=6 chroma=False": 32.626115199111275
+}

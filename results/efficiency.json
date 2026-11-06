@@ -1,0 +1,54 @@
+{
+ "Hybrid teacher FP32": {
+  "ms_per_tile": 217.82669995445758,
+  "peak_mb": 239.79296875,
+  "runtime_delta_mb": 187.078125,
+  "params": 4022444,
+  "gmacs_per_mp": 36.277953125,
+  "size_mib": 15.529373168945312,
+  "sec_per_12mp": 9.97131500035664
+ },
+ "Hybrid student FP32": {
+  "ms_per_tile": 33.05710002314299,
+  "peak_mb": 94.99609375,
+  "runtime_delta_mb": 42.44140625,
+  "params": 947036,
+  "gmacs_per_mp": 11.784,
+  "size_mib": 3.6219139099121094,
+  "sec_per_12mp": 1.5132339488133084
+ },
+ "Hybrid student FP16": {
+  "ms_per_tile": 32.34499995596707,
+  "peak_mb": 95.86328125,
+  "runtime_delta_mb": 43.1953125,
+  "params": 947036,
+  "gmacs_per_mp": 11.784,
+  "size_mib": 1.8190975189208984,
+  "sec_per_12mp": 1.4806365946640199
+ },
+ "Hybrid student INT8": {
+  "ms_per_tile": 14.848400023765862,
+  "peak_mb": 90.5234375,
+  "runtime_delta_mb": 37.65625,
+  "params": 947036,
+  "gmacs_per_mp": 11.784,
+  "size_mib": 0.9798097610473633,
+  "sec_per_12mp": 0.6797058116347898
+ },
+ "Light student INT8": {
+  "ms_per_tile": 11.347500025294721,
+  "peak_mb": 86.39453125,
+  "runtime_delta_mb": 33.83203125,
+  "params": 145396,
+  "gmacs_per_mp": 2.532,
+  "size_mib": 0.19010162353515625,
+  "sec_per_12mp": 0.5194473278180567
+ },
+ "Classical ISP": {
+  "ms_per_tile": 39.33852000627667,
+  "sec_per_12mp": 1.8007745364201357,
+  "params": 0,
+  "size_mib": 0.0
+ },
+ "_threads": 2
+}

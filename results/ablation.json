@@ -1,0 +1,56 @@
+{
+ "Baseline: small student, distilled, augmented": {
+  "psnr": 34.946516007196855,
+  "ssim": 0.9036752954125404,
+  "delta_e": 3.665361915682924,
+  "lpips": 0.20734882354736328
+ },
+ "- learned AWB correction (gray-world)": {
+  "psnr": 31.262475023623423,
+  "ssim": 0.8978869328596468,
+  "delta_e": 5.933094878391973,
+  "lpips": 0.2383003830909729
+ },
+ "+ noise conditioning planes": {
+  "psnr": 34.80615692367002,
+  "ssim": 0.9003859750027287,
+  "delta_e": 3.688771919572148,
+  "lpips": 0.2111034393310547
+ },
+ "+ noise planes, - augmentation": {
+  "psnr": 34.78970578410677,
+  "ssim": 0.90030452474181,
+  "delta_e": 3.7054243046661903,
+  "lpips": 0.21557758748531342
+ },
+ "+ noise planes, - distillation": {
+  "psnr": 34.75208839849888,
+  "ssim": 0.8967894610531372,
+  "delta_e": 3.6946632539660764,
+  "lpips": 0.21673737466335297
+ },
+ "- all learned restoration (classical only)": {
+  "psnr": 33.35554542073008,
+  "ssim": 0.8656604578397398,
+  "delta_e": 3.979734425529324,
+  "lpips": 0.26737481355667114
+ },
+ "Classical - bilateral raw denoise": {
+  "psnr": 30.365613397346383,
+  "ssim": 0.6902068645597018,
+  "delta_e": 4.374715439975262,
+  "lpips": 0.5400466918945312
+ },
+ "Classical - chroma denoise": {
+  "psnr": 30.611392944297517,
+  "ssim": 0.7533993801615876,
+  "delta_e": 6.435668212843352,
+  "lpips": 0.3273107409477234
+ },
+ "Classical - both denoisers": {
+  "psnr": 25.600880380343167,
+  "ssim": 0.4361254710800432,
+  "delta_e": 10.739764354352292,
+  "lpips": 0.575921356678009
+ }
+}

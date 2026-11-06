@@ -1,0 +1,56 @@
+{
+ "FP32": {
+  "clean input (as captured)": 37.16490508791725,
+  "extra noise x4": 33.09157138434917,
+  "underexposed -2 EV": 32.317233252068185,
+  "mean": 34.1912365747782
+ },
+ "p99.5, clean calibration": {
+  "clean input (as captured)": 36.92011870224011,
+  "extra noise x4": 32.73038623092474,
+  "underexposed -2 EV": 31.752972597120444,
+  "mean": 33.801159176761765
+ },
+ "p99.5, mixed calibration": {
+  "clean input (as captured)": 36.9632024396117,
+  "extra noise x4": 33.04536765436191,
+  "underexposed -2 EV": 32.120673694888794,
+  "mean": 34.04308126295414
+ },
+ "p99.9, clean calibration": {
+  "clean input (as captured)": 36.87231544217576,
+  "extra noise x4": 33.129932339349736,
+  "underexposed -2 EV": 32.27612924648321,
+  "mean": 34.09279234266957
+ },
+ "p99.9, mixed calibration": {
+  "clean input (as captured)": 36.78520895457046,
+  "extra noise x4": 33.05074416168332,
+  "underexposed -2 EV": 32.270308584481704,
+  "mean": 34.035420566911824
+ },
+ "p99.95, clean calibration": {
+  "clean input (as captured)": 36.758663963340176,
+  "extra noise x4": 33.06086433523457,
+  "underexposed -2 EV": 32.263796996666564,
+  "mean": 34.02777509841377
+ },
+ "p99.95, mixed calibration": {
+  "clean input (as captured)": 36.63641077771592,
+  "extra noise x4": 32.919632370864896,
+  "underexposed -2 EV": 32.19147044016457,
+  "mean": 33.91583786291513
+ },
+ "p99.99, clean calibration": {
+  "clean input (as captured)": 36.4640082451933,
+  "extra noise x4": 32.824007763896056,
+  "underexposed -2 EV": 32.10955359954441,
+  "mean": 33.799189869544584
+ },
+ "p99.99, mixed calibration": {
+  "clean input (as captured)": 36.23880695589038,
+  "extra noise x4": 32.63833771146445,
+  "underexposed -2 EV": 31.95659210719479,
+  "mean": 33.61124559151654
+ }
+}

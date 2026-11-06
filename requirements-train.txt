@@ -1,0 +1,10 @@
+-r requirements.txt
+torch
+torchvision
+lpips
+onnx
+onnxscript
+matplotlib
+tqdm
+huggingface_hub
+requests

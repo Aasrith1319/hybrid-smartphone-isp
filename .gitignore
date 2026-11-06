@@ -1,0 +1,14 @@
+.venv/
+data/
+__pycache__/
+*.pyc
+weights/*_last.pt
+weights/*.pt
+weights/*_fp16.onnx
+.env
+.DS_Store
+results/log_queue.txt
+weights/teacher_fp32.onnx
+results/log_*.txt
+*.data
+sym_shape_infer_temp.onnx

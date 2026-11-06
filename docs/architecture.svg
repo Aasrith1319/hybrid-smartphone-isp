@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker>
+    <style>
+      .c{fill:#e0f2fe;stroke:#0369a1}.l{fill:#fef3c7;stroke:#b45309}.d{fill:#ede9fe;stroke:#6d28d9}.n{fill:#f1f5f9;stroke:#475569}
+      rect{stroke-width:1.5;rx:8}.t{font-weight:600;fill:#0f172a}.s{fill:#334155;font-size:11.5px}
+      .w{stroke:#475569;stroke-width:1.5;fill:none;marker-end:url(#a)}.h{font-weight:700;font-size:15px;fill:#0f172a}
+    </style>
+  </defs>
+  <rect width="1000" height="560" fill="#ffffff" style="stroke:none"/>
+  <text x="24" y="32" class="h">Hybrid ISP: learned restoration inside exact classical colour stages</text>
+  <rect class="c" x="660" y="16" width="16" height="14"/><text x="682" y="28" class="s">classical</text>
+  <rect class="l" x="750" y="16" width="16" height="14"/><text x="772" y="28" class="s">learned</text>
+  <rect class="d" x="835" y="16" width="16" height="14"/><text x="857" y="28" class="s">adaptive decision</text>
+
+  <rect class="n" x="24" y="70" width="140" height="64"/><text x="94" y="96" text-anchor="middle" class="t">Input</text><text x="94" y="114" text-anchor="middle" class="s">DNG, Bayer, or JPG</text><text x="94" y="127" text-anchor="middle" class="s">(unprocessed) · inputs.py</text>
+  <rect class="c" x="204" y="70" width="170" height="64"/><text x="289" y="96" text-anchor="middle" class="t">Bayer preprocessing</text><text x="289" y="114" text-anchor="middle" class="s">black level, normalise</text><text x="289" y="127" text-anchor="middle" class="s">re-phase to RGGB, pack</text>
+
+  <rect class="c" x="414" y="58" width="170" height="44"/><text x="499" y="78" text-anchor="middle" class="t">Noise estimation</text><text x="499" y="94" text-anchor="middle" class="s">var = a · I + b (G1−G2)</text>
+  <rect class="c" x="414" y="112" width="170" height="44"/><text x="499" y="132" text-anchor="middle" class="t">Illuminant statistics</text><text x="499" y="148" text-anchor="middle" class="s">gray-world, shades, edges</text>
+  <rect class="l" x="624" y="112" width="170" height="44"/><text x="709" y="132" text-anchor="middle" class="t">Corrected AWB</text><text x="709" y="148" text-anchor="middle" class="s">ridge regression · awb.py</text>
+  <rect class="d" x="624" y="58" width="170" height="44"/><text x="709" y="78" text-anchor="middle" class="t">Adaptive control</text><text x="709" y="94" text-anchor="middle" class="s">exposure, filter and sharpen strength</text>
+  <rect class="n" x="834" y="112" width="142" height="44"/><text x="905" y="132" text-anchor="middle" class="t">As-shot metadata</text><text x="905" y="148" text-anchor="middle" class="s">preferred, when present</text>
+
+  <path class="w" d="M164 102H204"/><path class="w" d="M374 92L414 80"/><path class="w" d="M374 112L414 134"/><path class="w" d="M584 80H624"/><path class="w" d="M584 134H624"/><path class="w" d="M834 134H794"/>
+
+  <rect class="c" x="204" y="214" width="170" height="52"/><text x="289" y="236" text-anchor="middle" class="t">White balance</text><text x="289" y="254" text-anchor="middle" class="s">per-channel gains</text>
+  <rect class="c" x="414" y="214" width="170" height="52"/><text x="499" y="236" text-anchor="middle" class="t">Signed sqrt compression</text><text x="499" y="254" text-anchor="middle" class="s">packed half-res input</text>
+  <rect class="l" x="624" y="196" width="170" height="88"/><text x="709" y="222" text-anchor="middle" class="t">Restoration U-Net</text><text x="709" y="240" text-anchor="middle" class="s">joint denoise + demosaic</text><text x="709" y="256" text-anchor="middle" class="s">INT8, conv only</text><text x="709" y="272" text-anchor="middle" class="s">outputs a residual</text>
+  <rect class="c" x="834" y="214" width="142" height="52"/><text x="905" y="236" text-anchor="middle" class="t">Bilinear base</text><text x="905" y="254" text-anchor="middle" class="s">+ residual, inverse sqrt</text>
+
+  <path class="w" d="M289 134V214"/><path class="w" d="M374 240H414"/><path class="w" d="M584 240H624"/><path class="w" d="M794 240H834"/>  <path class="w" d="M794 72H814V300H560V330" style="stroke-dasharray:5 4"/>
+  <path class="w" d="M660 156V170H319V214" style="stroke-dasharray:5 4"/>
+
+  <rect class="c" x="834" y="330" width="142" height="52"/><text x="905" y="352" text-anchor="middle" class="t">Colour matrix</text><text x="905" y="370" text-anchor="middle" class="s">camera → XYZ → sRGB</text>
+  <rect class="c" x="624" y="330" width="170" height="52"/><text x="709" y="352" text-anchor="middle" class="t">sRGB gamma (OETF)</text><text x="709" y="370" text-anchor="middle" class="s">colour-space transform</text>
+  <rect class="c" x="414" y="330" width="170" height="52"/><text x="499" y="352" text-anchor="middle" class="t">Tone map + sharpen</text><text x="499" y="370" text-anchor="middle" class="s">optional display look</text>
+  <rect class="n" x="204" y="330" width="170" height="52"/><text x="289" y="352" text-anchor="middle" class="t">sRGB output</text><text x="289" y="370" text-anchor="middle" class="s">plus stage previews in app</text>
+  <path class="w" d="M905 266V330"/><path class="w" d="M834 356H794"/><path class="w" d="M624 356H584"/><path class="w" d="M414 356H374"/>
+
+  <rect x="24" y="420" width="952" height="122" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="44" y="446" class="t">Training (scripts/train.py)</text>
+  <text x="44" y="468" class="s">Teacher: 4.0M-parameter NAFNet U-Net, trained through the fixed colour stages with an L1 loss on sRGB against SIDD-CC ground truth.</text>
+  <text x="44" y="488" class="s">Student: plain-convolution U-Net, distilled from the teacher, then exported to ONNX and statically quantised to INT8 on real calibration tiles.</text>
+  <text x="44" y="508" class="s">Baselines on the same pipeline: classical path (bilateral raw denoise + guided chroma denoise) in isp/pipeline.py, and an end-to-end network with no classical stages.</text>
+  <text x="44" y="528" class="s">Extra-noise and white-balance augmentation give the network robustness to sensor gain and AWB error. A 0.15M light network serves as the battery-saver option.</text>
+</svg>
