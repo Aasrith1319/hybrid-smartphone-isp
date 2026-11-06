@@ -137,19 +137,28 @@ classical path; replacing corrected AWB with gray-world loses 3.7 dB; removing l
   scaled from one tile. Peak memory covers one tile, not the whole frame.
 - **The reference has no tone curve or sharpening,** so the display look is unscored and is a matter of taste.
 - **JPG input is simulated RAW,** so it does not reflect real sensor statistics.
-- **Very large frames are binned** to 4 MP in the app to keep response times low.
+- **Very large frames are binned,** to about 1.5 MP in the browser and 4 MP in the local app, to keep response times low.
 
 ## 11. Ethics
 
 SIDD-CC is used under the SIDD terms and cited. Scenes are staged objects with no people. Stronger low-light imaging can
 reveal more than a person expects, and learned restoration can invent or remove detail, so outputs should not serve
-as forensic evidence. Uploads pass through Gradio's temporary file cache on the host. The app does not log or share them, but anyone hosting it
-should treat them as temporarily stored. Models are small and trained on one laptop GPU, so training energy was modest.
+as forensic evidence. The live app processes files on the visitor's device and uploads nothing. The local Gradio app passes uploads through its
+temporary file cache. Models are small and trained on one laptop GPU, so training energy was modest.
 
 ## 12. Deployment
 
-Gradio app (`app.py`) with ONNX Runtime on CPU, no PyTorch needed at runtime. The `Dockerfile` serves port 7860. Bad files
-produce on-screen messages; `tests/test_isp.py` covers these and the core stages. No secrets are needed.
+The live app is a static GitHub Pages site (`docs/index.html`, `app.js`, `isp.js`, `inputs.js`). The pipeline is ported to
+JavaScript, and the INT8 model runs through ONNX Runtime Web (WebAssembly, vendored in `docs/vendor`). So the model
+really runs on the visitor's device, files are never uploaded, and no server can go down. Hugging Face Spaces was
+planned, but Docker and Gradio Spaces there now need a paid plan.
+
+The port was checked against Python on all five samples: PSNR agrees within 0.01 dB and ΔE within 0.01. Browser limits:
+uncompressed DNG only, gray-world instead of corrected AWB when a file has no white balance, frames binned to about 1.5 MP,
+one CPU thread (Pages cannot send the headers browser threads need), and no intermediate-stage previews.
+
+`app.py` is the full local Gradio app, using ONNX Runtime on CPU with no PyTorch at runtime. Its `Dockerfile` has not been
+built. Bad files produce on-screen messages in both apps; `tests/test_isp.py` covers the Python stages.
 
 ## 13. Reproducibility
 

@@ -1,17 +1,9 @@
----
-title: Hybrid Smartphone ISP
-emoji: 📷
-colorFrom: indigo
-colorTo: pink
-sdk: docker
-app_port: 7860
-pinned: false
----
-
 # Hybrid Smartphone ISP (Hackathon P2)
 
 A learned, computationally efficient smartphone ISP: noisy RAW in, finished sRGB out. A 0.95M-parameter INT8 network does
 denoising and demosaicing, inside exact classical stages for white balance, colour and gamma. The model is under 1 MB.
+
+**Live app:** https://aasrith1319.github.io/hybrid-smartphone-isp/
 
 ![architecture](docs/architecture.svg)
 
@@ -31,6 +23,11 @@ With the true white balance, the deployed model reaches 38.61 dB, so colour esti
 
 ## Run it
 
+The live app runs the INT8 model in your browser through ONNX Runtime Web, so files never leave your device. It accepts
+samples, uncompressed DNG, `.npy` Bayer mosaics, and JPG/PNG (converted to simulated RAW). Source is in `docs/`.
+
+The full local app adds intermediate-stage previews, other camera RAW formats and corrected AWB:
+
 ```bash
 pip install -r requirements.txt
 python app.py
@@ -43,8 +40,7 @@ docker build -t hybrid-isp .
 docker run -p 7860:7860 hybrid-isp
 ```
 
-The app accepts DNG and other Bayer camera RAW, `.npy` Bayer mosaics, and JPG/PNG (converted to simulated RAW). It runs on CPU
-and needs no secrets.
+It runs on CPU and needs no secrets. After changing models or samples, run `python scripts/build_web.py` to refresh `docs/assets`.
 
 ## Reproduce the results
 
@@ -69,13 +65,14 @@ models are in `weights/`. Run the checks with `python -m pytest tests`.
 
 | Path | Purpose |
 |---|---|
-| `app.py` | Gradio interface |
+| `docs/index.html`, `docs/*.js` | Browser app, a JavaScript port of the pipeline |
+| `app.py` | Local Gradio interface |
 | `isp/classical.py` | Classical stages: demosaic, WB, CCM, gamma, denoise, tone map, sharpen |
 | `isp/pipeline.py` | Classical, learned and hybrid ISPs |
 | `isp/models.py` | Teacher, student and differentiable colour stages |
 | `isp/awb.py` | Corrected white balance |
 | `isp/engine.py`, `isp/inputs.py` | Runtime and file handling |
-| `scripts/` | Data, training, export, evaluation, publishing |
+| `scripts/` | Data, training, export, evaluation, web build |
 | `docs/DESIGN.md` | Design document, limitations and ethics |
 | `docs/FAILURES.md` | Failure-case analysis |
 | `docs/VIVA.md` | Viva guide |

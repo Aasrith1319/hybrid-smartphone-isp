@@ -12,3 +12,4 @@ weights/teacher_fp32.onnx
 results/log_*.txt
 *.data
 sym_shape_infer_temp.onnx
+.gradio/
