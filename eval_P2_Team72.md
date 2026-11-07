@@ -1,6 +1,6 @@
 USN1,USN2,USN3
 
-# Evaluation: P2, Intelligent and Computationally Efficient Smartphone ISP (Team TXX)
+# Evaluation: P2, Intelligent and Computationally Efficient Smartphone ISP (Team 72)
 
 Test set: all 928 blocks (29 instances x 32) of the SIDD-CC benchmark split, not used for training,
 tuning or calibration. Input is noisy RAW; target is the clean sRGB ground truth. The blocks ship
